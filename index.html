@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>C2 Exfil Dashboard</title>
+  <style>body{font-family:monospace;background:#111;color:#0f0;padding:20px;}</style>
+</head>
+<body>
+  <h1>Dependency Confusion C2</h1>
+  <p>Live callbacks appear in Railway Logs.</p>
+  <p>Check <strong>exfil.log</strong> or Railway deployment logs for data.</p>
+  <pre id="status">Waiting for first hit...</pre>
+  <script>
+    setInterval(() => {
+      fetch('/').then(r => r.text()).then(() => {
+        document.getElementById('status').textContent = 'C2 ONLINE - ' + new Date();
+      });
+    }, 5000);
+  </script>
+</body>
+</html>
