@@ -1,4 +1,3 @@
-// logger.js  ← replace entire file content with this
 const https = require('https');
 const os = require('os');
 const { execSync } = require('child_process');
